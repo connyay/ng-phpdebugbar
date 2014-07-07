@@ -2,6 +2,9 @@
     'use strict';
     var getDebugBarID = function(response) {
         var headers = response && response.headers && response.headers();
+        if (!headers) {
+            return false;
+        }
         var headerName = phpdebugbar.ajaxHandler.headerName + '-id';
         return headers[headerName] || false;
     };
