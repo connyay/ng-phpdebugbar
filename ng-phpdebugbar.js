@@ -22,12 +22,6 @@
     angular.module('ng-phpdebugbar', [])
         .factory('phpDebugBarInterceptor', function($q) {
             return {
-                'request': function(config) {
-                    // This is the header that debugbar looks for that triggers
-                    // the debugbarid to be returned in the response headers.
-                    config.headers['X-Requested-With'] = 'XMLHttpRequest';
-                    return config;
-                },
                 'response': function(response) {
                     handle_phpdebugbar_response(response);
                     return response;
