@@ -33,9 +33,9 @@
                     return response;
                 },
                 'responseError': function(rejection) {
-                    handle_phpdebugbar_response(response);
+                    handle_phpdebugbar_response(rejection);
                     return $q.reject(rejection);
-                },
+                }
             };
         })
         .config(['$httpProvider',
