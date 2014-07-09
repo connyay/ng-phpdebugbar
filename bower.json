@@ -6,6 +6,7 @@
     "authors": [
         "Connor Hindley <conn.hindley@gmail.com>"
     ],
+    "ignore": [],
     "description": "Make angular ajax requests work with PHP Debug Bar",
     "license": "MIT"
 }
