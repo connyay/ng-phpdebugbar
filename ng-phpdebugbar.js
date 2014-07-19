@@ -20,7 +20,7 @@
         }
     };
     angular.module('ng-phpdebugbar', [])
-        .factory('phpDebugBarInterceptor', function($q) {
+        .factory('phpDebugBarInterceptor', ['$q', function($q) {
             return {
                 'response': function(response) {
                     handle_phpdebugbar_response(response);
@@ -31,7 +31,7 @@
                     return $q.reject(rejection);
                 }
             };
-        })
+        }])
         .config(['$httpProvider',
             function($httpProvider) {
                 // Adds our debug interceptor to all $http requests
